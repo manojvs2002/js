@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function sync1(){
+    return new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>{
+                alert("func 1 is called");
+                resolve();
+            },1000);
+        });
+}
+function sync2(){
+    return new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>{
+                alert("func 2 is called");
+                resolve();
+            },1000);
+        });
+}
+function sync3(){
+    return new Promise((resolve,reject)=>
+        {
+            setTimeout(()=>{
+                alert("func 3 is called");
+                resolve();
+            },1000);
+        });
+}
+
+sync1().then(()=>{return sync2();}).then(()=>{return sync3();}).then(()=>{alert("all func are callled");}).catch((error)=>{alert("error");});
+        </script>
+
+</body>
+</html>

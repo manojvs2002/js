@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+       <input type="text" id="inputstring">
+       <button id="Sorting">Sort</button>
+       </form>
+       <script>
+        function sortstring(){
+            var str=document.getElementById("inputstring").value;
+            var s=str.split('').sort().join('');
+            alert("sorted strring  "+s);
+        }
+        document.getElementById("Sorting").addEventListener('click',sortstring);
+       </script>
+    
+    
+</body>
+</html>
